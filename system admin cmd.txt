@@ -1,0 +1,64 @@
+$ ./filesystem.sh
+# Initial prompt, starting at the root directory ("/").
+/$
+
+# Create a new directory called "documents" and navigate into it.
+/$ mkdir documents
+/$ cd documents
+/documents$
+
+# Navigate back to the root directory and list its contents.
+/documents$ cd ..
+/$ ls
+documents
+/$
+
+# Inside the "documents" directory, create a file "notes.txt" and list directory contents.
+/documents$ touch notes.txt
+/documents$ ls
+notes.txt
+
+# Display the initial content of "notes.txt" (empty), then adding a task and displaying the updated content.
+/documents$ cat notes.txt
+/documents$ echo 'Buy groceries' > notes.txt
+/documents$ cat notes.txt
+Buy groceries
+/documents$
+
+# Display the content of "notes.txt" and then remove it.
+/documents$ cat notes.txt
+/documents$ ls
+notes.txt
+/documents$
+
+# Use the grep command to search for the pattern "sample" in the file "notes.txt".
+/documents$ grep "sample" notes.txt
+This is a sample text for searching purposes.
+/documents$
+
+# Display the content of "notes.txt" .
+/documents$ cat notes.txt
+
+
+# Create the destination directory structure as mentioned in the example.
+/documents$ mkdir -p data/ice_cream/boring/ice_cream/mississippimudpie
+
+# Move the file "notes.txt" to the specified location.
+/documents$ mv notes.txt ./data/ice_cream/boring/ice_cream/mississippimudpie/
+
+# List the contents of the source and destination directories.
+/documents$ ls
+notes.txt
+/documents$ ls data/ice_cream/boring/ice_cream/mississippimudpie/
+notes.txt
+/documents$
+
+# Copy the file "notes.txt" to the current directory.
+/documents$ cp notes.txt .
+
+# Remove the file "notes.txt".
+/documents$ rm notes.txt
+
+# Exit the script.
+/$ exit
+
